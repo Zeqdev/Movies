@@ -1,0 +1,27 @@
+.detailsContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.movieImg {
+	max-width: 400px;
+
+	margin: 15px;
+
+	border-radius: 15px;
+}
+
+.movieDetails {
+	max-width: 400px;
+
+	margin: 15px;
+}
+
+.movieInfo {
+	color: #fff;
+	font-size: 1.5rem;
+
+	margin: 10px 0;
+}

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from './MovieCard.module.css';
 
 export function MovieCard({ movie }) {
@@ -5,13 +6,15 @@ export function MovieCard({ movie }) {
 
 	return (
 		<li className={styles.movieCard}>
-			<img
-				className={styles.movieImg}
-				height={345}
-				width={230}
-				src={imgURL}
-				alt={movie.title}></img>
-			<div>{movie.title}</div>
+			<Link to={'/movie/' + movie.id}>
+				<img
+					className={styles.movieImg}
+					height={345}
+					width={230}
+					src={imgURL}
+					alt={movie.title}></img>
+				<div>{movie.title}</div>
+			</Link>
 		</li>
 	);
 }

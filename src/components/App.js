@@ -1,15 +1,23 @@
-import { MoviesGrid } from './MoviesGrid';
+import { BrowserRouter, Routes, Route, Link, Navigate } from 'react-router-dom';
+import { Home } from '../pages/Home';
+import { MovieDetails } from '../pages/MovieDetails';
 import styles from './App.module.css';
 
 export function App() {
 	return (
-		<div>
+		<BrowserRouter>
 			<header>
-				<h1 className={styles.title}>Movies</h1>
+				<Link to='/'>
+					<h1 className={styles.title}>Movies</h1>
+				</Link>
 			</header>
 			<main>
-				<MoviesGrid />
+				<Routes>
+					<Route path='/' element={<Home />} />
+					<Route path='/movie/:movieId' element={<MovieDetails />} />
+					<Route path='*' element={<Navigate replace to='/' />} />
+				</Routes>
 			</main>
-		</div>
+		</BrowserRouter>
 	);
 }
