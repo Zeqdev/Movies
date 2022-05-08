@@ -3,6 +3,7 @@ import { useQuery } from '../hooks/useQuery';
 import { get } from '../utils/httpClient';
 import { MovieCard } from './MovieCard';
 import { Loader } from './Loader';
+import { Empty } from './Empty';
 import styles from './MoviesGrid.module.css';
 
 export function MoviesGrid() {
@@ -24,6 +25,10 @@ export function MoviesGrid() {
 
 	if (loading) {
 		return <Loader />;
+	}
+
+	if (!loading && movies.length === 0) {
+		return <Empty />;
 	}
 
 	return (
